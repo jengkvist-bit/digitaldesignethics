@@ -1,0 +1,32 @@
+---
+// Felsidan som visas när en adress inte finns, t.ex. gamla Squarespace-länkar.
+import Bas from '../layouts/Bas.astro';
+import { getCollection } from 'astro:content';
+const principer = (await getCollection('principer')).sort((a, b) => a.data.nr - b.data.nr);
+const namn = (id: string) => id.replace(/-/g, ' ').replace(/^./, (b) => b.toUpperCase());
+const VARIANT = 'a';
+---
+<Bas titel="Page not found — Digital Design Ethics" ingenIndex>
+  <div class="innehall felsida">
+    {VARIANT === 'a' ? (
+      <>
+        <h1>This page doesn’t exist</h1>
+        <p class="ingress">The site has moved to a new home, and some old addresses are gone. But the principles are all still here.</p>
+        <ol class="princip-lista">
+          {principer.map((p) => <li><a href={`/principles/${p.id}`}><span class="nummer">#{p.data.nr}</span> {namn(p.id)}</a></li>)}
+        </ol>
+        <p><a class="knapp" href="/">See all 10 principles</a></p>
+      </>
+    ) : (
+      <>
+        <h1>Oops, nothing here</h1>
+        <p>The page you’re looking for doesn’t exist, or has moved.</p>
+        <nav class="vidare" aria-label="Go to">
+          <a href="/">The 10 principles</a>
+          <a href="/what-is-this">What is this?</a>
+          <a href="/who-made-this">Who made this?</a>
+        </nav>
+      </>
+    )}
+  </div>
+</Bas>

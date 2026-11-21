@@ -5,8 +5,9 @@ import '@fontsource/inter-tight/600.css';
 import '../styles/global.css';
 import { SAJT, jonas } from '../lib/schema';
 
-interface Props { titel: string; beskrivning?: string; bild?: string; schema?: object[] }
-const { titel, beskrivning = '', bild = '/bilder/dde10-open-graph-FB.png', schema = [] } = Astro.props;
+// ingenIndex: sidan ska inte visas i sökresultat (används av felsidan 404)
+interface Props { titel: string; beskrivning?: string; bild?: string; schema?: object[]; ingenIndex?: boolean }
+const { titel, beskrivning = '', bild = '/bilder/dde10-open-graph-FB.png', schema = [], ingenIndex = false } = Astro.props;
 const sajt = SAJT;
 // Strukturerad data (schema.org) som hjälper Google och AI-tjänster att förstå sajten.
 const webbplats = {
@@ -55,7 +56,7 @@ const meny = [
   <meta property="og:image:alt" content="Digital Design Ethics: 10 universal principles for ethics in digital design" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
-  <link rel="canonical" href={new URL(sökväg, Astro.site)} />
+  {ingenIndex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={new URL(sökväg, Astro.site)} />}
   {[webbplats, organisation, person, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
 <body>

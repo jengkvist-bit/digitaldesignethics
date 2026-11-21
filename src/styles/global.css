@@ -95,3 +95,9 @@ hr { border: 0; border-top: 1px solid var(--linje); margin: 2.5rem 0; }
 .poster h2 { margin-top: 0; color: #fff; }
 .poster .knapp { margin-top: 0.4rem; background: #fff; color: var(--knapp); }
 .poster-not { font-size: 0.85em; margin-top: -0.3rem; }
+
+/* Felsidan (404) */
+.princip-lista { list-style: none; padding: 0; margin: 2rem 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 0.2rem 2rem; }
+.princip-lista a { display: block; padding: 0.5rem 0; border-bottom: 1px solid var(--linje); color: var(--text); text-decoration: none; font-weight: 600; }
+.princip-lista a:hover { color: var(--länk); }
+.princip-lista .nummer { color: var(--länk); margin-right: 0.3rem; }
