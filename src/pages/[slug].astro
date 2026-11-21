@@ -1,0 +1,17 @@
+---
+// Mall för de övriga sidorna. Texten hämtas från src/content/sidor/<adress>.md
+import Bas from '../layouts/Bas.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const sidor = (await getCollection('sidor')).filter((s) => s.id !== 'start');
+  return sidor.map((sida) => ({ params: { slug: sida.id }, props: { sida } }));
+}
+const { sida } = Astro.props;
+const { Content } = await render(sida);
+---
+<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild}>
+  <article class={`innehall ${sida.id}`}>
+    <Content />
+  </article>
+</Bas>

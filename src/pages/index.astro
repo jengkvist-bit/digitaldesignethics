@@ -1,0 +1,12 @@
+---
+// Startsidan. Texten hämtas från src/content/sidor/start.md
+import Bas from '../layouts/Bas.astro';
+import { getEntry, render } from 'astro:content';
+const sida = (await getEntry('sidor', 'start'))!;
+const { Content } = await render(sida);
+---
+<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild}>
+  <article class="innehall start">
+    <Content />
+  </article>
+</Bas>

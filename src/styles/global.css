@@ -1,0 +1,114 @@
+/* Design för digitaldesignethics.com.
+   Färger och typsnitt styrs av variablerna nedan. Tre förslag (a, b, c) finns
+   tills Jonas har valt ett; sedan tas de andra bort. */
+
+:root {
+  --bakgrund: #fff6f5;
+  --yta: #ffffff;
+  --text: #404040;
+  --rubrik: #ed4258;
+  --accent: #ed4258;
+  --accent-text: #ffffff;
+  --länk: #c62a40;
+  --linje: #f3d6d3;
+  --typsnitt: 'Inter Tight', system-ui, sans-serif;
+  --bredd: 46rem;
+}
+[data-tema='c'] {
+  --bakgrund: #ffffff;
+  --yta: #ffffff;
+  --text: #2b2b2b;
+  --rubrik: #1d1d1f;
+  --accent: #d23048;
+  --länk: #b8233a;
+  --linje: #e6e6e6;
+  --bredd: 40rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bakgrund);
+  color: var(--text);
+  font-family: var(--typsnitt);
+  font-size: clamp(1.05rem, 0.95rem + 0.45vw, 1.35rem);
+  line-height: 1.63;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--länk); text-underline-offset: 0.15em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.hoppa { position: absolute; left: -999px; top: 0; background: var(--yta); padding: 0.5rem 1rem; z-index: 10; }
+.hoppa:focus { left: 1rem; }
+
+/* Sidhuvud */
+.sidhuvud {
+  background: var(--yta);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem 2rem; padding: 1.1rem clamp(1rem, 4vw, 3rem);
+}
+.logga { color: var(--rubrik); font-weight: 600; font-size: 1.35em; text-decoration: none; }
+.sidhuvud ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.4rem; font-size: 0.9em; }
+.sidhuvud nav a { color: var(--text); text-decoration: none; }
+.sidhuvud nav a:hover, .sidhuvud nav a[aria-current='page'] { color: var(--rubrik); text-decoration: underline; }
+
+/* Innehåll */
+.innehall { max-width: var(--bredd); margin: 0 auto; padding: clamp(2rem, 6vw, 5rem) 1rem 3rem; }
+h1, h2, h3 { color: var(--rubrik); font-weight: 600; line-height: 1.1; }
+h1 { font-size: clamp(2.3rem, 1.4rem + 3.6vw, 4.1rem); margin: 0 0 1.5rem; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2rem); margin: 2.8rem 0 0.8rem; }
+hr { border: 0; border-top: 1px solid var(--linje); margin: 2.5rem 0; }
+.ingress { font-size: 1.2em; font-weight: 600; color: var(--rubrik); line-height: 1.3; }
+
+.knapp {
+  display: inline-block; background: var(--accent); color: var(--accent-text);
+  font-weight: 600; text-decoration: none; padding: 0.85rem 1.6rem; border-radius: 0.3rem; font-size: 0.9em;
+}
+.knapp:hover { filter: brightness(0.92); }
+.knapp-rad { margin-top: 1.2rem; }
+
+.vidare { display: flex; flex-wrap: wrap; gap: 1rem 2.5rem; margin-top: 4rem; }
+.vidare a { color: var(--rubrik); font-weight: 600; font-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.6rem); text-decoration: none; }
+.vidare a:hover { text-decoration: underline; }
+
+/* Video och verktyg */
+.video { position: relative; aspect-ratio: 16 / 9; margin: 1.5rem 0; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.verktyg iframe { width: 100%; height: 470px; border: 0; display: block; margin: 1.5rem 0 2rem; }
+
+/* FAQ */
+details { border-top: 1px solid var(--linje); padding: 0.9rem 0; }
+details:last-of-type { border-bottom: 1px solid var(--linje); }
+summary { cursor: pointer; font-weight: 600; color: var(--rubrik); }
+details p { margin: 0.7rem 0 0.2rem; }
+
+/* Om oss */
+.odi { margin: 2.5rem 0; }
+.odi img { max-width: 16rem; }
+.person { display: grid; gap: 1.5rem; align-items: center; margin-top: 3rem; }
+.person img { width: 14rem; border-radius: 50%; }
+@media (min-width: 40rem) { .person { grid-template-columns: 14rem 1fr; } }
+
+/* Sidfot */
+.sidfot { max-width: var(--bredd); margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.8em; border-top: 1px solid var(--linje); }
+.sidfot p { margin: 0.2rem 0; }
+.sidfot a { color: inherit; }
+
+/* ---------- Förslag B: principerna som kort ---------- */
+[data-tema='b'] .start { max-width: 72rem; }
+[data-tema='b'] .start > :not(.principer) { max-width: 46rem; }
+[data-tema='b'] .principer { display: grid; gap: 1.2rem; margin-top: 2.5rem; }
+@media (min-width: 52rem) { [data-tema='b'] .principer { grid-template-columns: 1fr 1fr; } }
+[data-tema='b'] .princip { background: var(--yta); border-radius: 0.6rem; padding: 1.6rem 1.8rem; box-shadow: 0 1px 3px rgb(0 0 0 / 6%); }
+[data-tema='b'] .princip h2 { margin-top: 0; }
+[data-tema='b'] .princip p { font-size: 0.92em; }
+
+/* ---------- Förslag C: lugn läsning ---------- */
+[data-tema='c'] .sidhuvud { border-bottom: 1px solid var(--linje); }
+[data-tema='c'] .logga { color: var(--text); }
+[data-tema='c'] h1 { color: var(--rubrik); }
+[data-tema='c'] .princip { border-top: 1px solid var(--linje); padding-top: 1.8rem; margin-top: 2.2rem; }
+[data-tema='c'] .princip h2 { margin: 0 0 0.8rem; }
+[data-tema='c'] .nummer { display: block; color: var(--accent); font-size: 0.8em; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
+[data-tema='c'] .vidare a, [data-tema='c'] summary { color: var(--rubrik); }

@@ -1,0 +1,87 @@
+---
+// Grundmallen som alla sidor använder: <head>, sidhuvud och sidfot.
+import '@fontsource/inter-tight/400.css';
+import '@fontsource/inter-tight/600.css';
+import '../styles/global.css';
+
+interface Props { titel: string; beskrivning?: string; bild?: string; schema?: object[] }
+const { titel, beskrivning = '', bild = '/bilder/dde10-open-graph-FB.png', schema = [] } = Astro.props;
+const sajt = 'https://www.digitaldesignethics.com';
+// Strukturerad data (schema.org) som hjälper Google och AI-tjänster att förstå sajten.
+const webbplats = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Digital Design Ethics',
+  url: sajt + '/',
+  inLanguage: 'en',
+  publisher: { '@id': 'https://www.onedayinteract.se/#organisation' },
+};
+const organisation = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://www.onedayinteract.se/#organisation',
+  name: 'One Day Interact',
+  url: 'https://www.onedayinteract.se',
+  email: 'jonas@onedayinteract.se',
+  logo: sajt + '/bilder/odi-avatar-wordmark-black.png',
+  founder: { '@type': 'Person', name: 'Jonas Engkvist', sameAs: ['https://se.linkedin.com/in/jonas-engkvist', 'https://medium.com/@jonasengkvist'] },
+};
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+// Sidans adress utan .html och utan snedstreck på slutet, t.ex. /what-is-this
+const sökväg = Astro.url.pathname.replace(base, '').replace(/\.html$/, '').replace(/\/$/, '').replace(/^\/index$/, '') || '/';
+const meny = [
+  { text: 'Home', href: '/' },
+  { text: 'What is this?', href: '/what-is-this' },
+  { text: 'Who made this?', href: '/who-made-this' },
+  { text: 'Ethics audit', href: '/ethics-audit' },
+];
+// Webbanalys med GoatCounter: räknar besök utan cookies, så ingen cookie-banner behövs.
+// Byt namnet om du valde ett annat när du skapade kontot på goatcounter.com.
+const goatcounter = 'digitaldesignethics';
+// Räkna bara besök på den riktiga sajten, inte på testadressen.
+const räknaBesök = Astro.site?.hostname === 'www.digitaldesignethics.com';
+// Designtema (tillfälligt, för att jämföra förslag). Tas bort när Jonas har valt.
+const tema = process.env.TEMA || 'a';
+---
+<!doctype html>
+<html lang="en" data-tema={tema}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{titel}</title>
+  {beskrivning && <meta name="description" content={beskrivning} />}
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Digital Design Ethics" />
+  <meta property="og:title" content={titel} />
+  {beskrivning && <meta property="og:description" content={beskrivning} />}
+  <meta property="og:image" content={new URL(base + bild, Astro.site)} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
+  <link rel="canonical" href={new URL(sökväg, Astro.site)} />
+  {[webbplats, organisation, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  {räknaBesök && (
+    <script is:inline async data-goatcounter={`https://${goatcounter}.goatcounter.com/count`} src="https://gc.zgo.at/count.js"></script>
+  )}
+</head>
+<body>
+  <a class="hoppa" href="#innehall">Skip to content</a>
+  <header class="sidhuvud">
+    <a class="logga" href={base + '/'}>Digital Design Ethics</a>
+    <nav aria-label="Main menu">
+      <ul>
+        {meny.map((m) => (
+          <li><a href={base + m.href} aria-current={sökväg === m.href ? 'page' : undefined}>{m.text}</a></li>
+        ))}
+        <li><a href="mailto:jonas@onedayinteract.se">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="innehall">
+    <slot />
+  </main>
+  <footer class="sidfot">
+    <p>© 2020 by <a href="https://onedayinteract.se/">One Day Interact</a></p>
+    <p>Use or share any way you like. We appreciate if you tell people were you got it from. / Cheers</p>
+  </footer>
+</body>
+</html>
