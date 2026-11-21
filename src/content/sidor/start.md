@@ -1,6 +1,6 @@
 ---
 sidtitel: "Digital Design Ethics: 10 ethical design principles as user stories"
-beskrivning: "10 universal principles for ethical digital design, based on the UN Declaration of Human Rights and written as user stories. Free to use in any design or redesign project."
+beskrivning: "10 universal principles for ethical digital design, written as user stories and based on the UN Declaration of Human Rights. Free to use."
 ---
 
 # 10 universal principles for ethics in digital design
