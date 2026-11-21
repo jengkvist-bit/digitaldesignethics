@@ -18,7 +18,7 @@ export async function GET() {
 
 ## The 10 principles
 
-${lista.map((p) => `### ${p.nr}. ${p.namn}\n\n- As a user, ${p.användare}\n- As a designer, ${p.designer}\n- Link: ${SAJT}/#${p.id}`).join('\n\n')}
+${lista.map((p) => `### ${p.nr}. ${p.namn}\n\n- As a user, ${p.användare}\n- As a designer, ${p.designer}\n- More, with examples and questions to ask: ${SAJT}/principles/${p.id}`).join('\n\n')}
 
 ## Contact
 

@@ -1,20 +1,24 @@
 ---
-sidtitel: "Digital Design Ethics - 10 universal principles"
-beskrivning: "Universal principles for ethical digital design. User stories ready to use freely in any design or redesign project."
+sidtitel: "Digital Design Ethics: 10 ethical design principles as user stories"
+beskrivning: "10 universal principles for ethical digital design, based on the UN Declaration of Human Rights and written as user stories. Free to use in any design or redesign project."
 ---
 
 # 10 universal principles for ethics in digital design
 
+Digital design ethics is about making sure that apps, websites and other digital services respect the rights, safety and wellbeing of the people who use them. These 10 principles translate the UN Universal Declaration of Human Rights into user stories that any design team can add to its requirements.
+
 Society has since long reached a point where digital life affects everyday human life in a very real way. Our interaction with the Digital has as much impact on us as any physical or social phenomena. It’s time to set the same ethical standards for the Digital, as we have for the physical aspects of life and society.
 
 If every digital artifact designed or redesigned from now on would just get **10 user stories** approved and done, the Digital would become a habitat where all humans of all sorts can thrive.
+
+<p class="avsandare">Created by <a href="/who-made-this">Jonas Engkvist</a>, <a href="https://www.onedayinteract.se">One Day Interact</a>. First published 2020, updated 2026.</p>
 
 
 ## #1 Freedom
 
 **As a user**, I need to be treated with dignity and have my rights respected, to keep my freedom and sense of equality.
 
-**As a designer**, I should make my users freedom and sense of equality my top priority. It is my responsibility to think really hard about how the digital artifacts we create could potentially be used to restrict the users need for safety, freedom and security. And I should actively make design decisions to steer away from those risks.
+**As a designer**, I should make my users' freedom and sense of equality my top priority. It is my responsibility to think really hard about how the digital artifacts we create could potentially be used to restrict the users' need for safety, freedom and security. And I should actively make design decisions to steer away from those risks.
 
 ## #2 Protection
 
@@ -26,7 +30,7 @@ If every digital artifact designed or redesigned from now on would just get **10
 
 **As a user**, I need to be equally recognized and responsible to laws as everyone else.
 
-**As a designer**, It is my responsibility to design the Digital in ways that don’t promote illegal behavior. I should also seek ways that any illegal actions can be noticed and registered to whomever is responsible for those actions.
+**As a designer**, it is my responsibility to design the Digital in ways that don’t promote illegal behavior. I should also seek ways that any illegal actions can be noticed and registered to whomever is responsible for those actions.
 
 ## #4 Choice
 
@@ -48,9 +52,9 @@ If every digital artifact designed or redesigned from now on would just get **10
 
 ## #7 Information
 
-**As a user**, I need to reach the full phlora of information and ideas created by others. So that I can explore the potentials of my intellectual capabilities.
+**As a user**, I need to reach the full flora of information and ideas created by others. So that I can explore the potentials of my intellectual capabilities.
 
-**As a designer**, I should actively seek to design for inclusion and free information flows. I should contribute to a richness in the Digital, where users can learn and expand their knowledge of the world, explore their mental horizonts, and cultivate their tolerance, understanding and friendship to all other users.
+**As a designer**, I should actively seek to design for inclusion and free information flows. I should contribute to a richness in the Digital, where users can learn and expand their knowledge of the world, explore their mental horizons, and cultivate their tolerance, understanding and friendship to all other users.
 
 ## #8 Inclusion
 
@@ -68,7 +72,7 @@ If every digital artifact designed or redesigned from now on would just get **10
 
 **As a user**, I need a break sometimes. I need room for rest and leisure. I need time to see, feel and experience the physical world with full focus at times.
 
-**As a Designer**, I need to realize that whatever digital tool or service I am creating, however crucial it may be, it is just a small part of any user's physical and digital life. I should design tools and services that are there whenever their user needs them, and that stays out of their way whenever they don’t need them.
+**As a designer**, I need to realize that whatever digital tool or service I am creating, however crucial it may be, it is just a small part of any user's physical and digital life. I should design tools and services that are there whenever their user needs them, and that stay out of their way whenever they don’t need them.
 
 <nav class="vidare" aria-label="Read more">
   <a href="/what-is-this">What is this?</a>

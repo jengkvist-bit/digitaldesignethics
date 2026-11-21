@@ -1,0 +1,46 @@
+---
+// En sida per princip, t.ex. /principles/privacy.
+// User stories hämtas från startsidan (start.md); "In practice" och frågorna från src/content/principer/<namn>.md
+import Bas from '../../layouts/Bas.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+import { SAJT, jonas, principer } from '../../lib/schema';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const sidor = await getCollection('principer');
+  return sidor.map((sida) => ({ params: { slug: sida.id }, props: { sida } }));
+}
+const { sida } = Astro.props;
+const { Content } = await render(sida);
+const start = (await getEntry('sidor', 'start'))!;
+const alla = principer(start.body ?? '');
+const p = alla.find((x) => x.id === sida.id)!;
+const före = alla.find((x) => x.nr === p.nr - 1);
+const efter = alla.find((x) => x.nr === p.nr + 1);
+
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: `Principle #${p.nr}: ${p.namn}`,
+  description: sida.data.beskrivning,
+  url: `${SAJT}/principles/${p.id}`,
+  author: { '@id': jonas['@id'] },
+  publisher: { '@id': 'https://www.onedayinteract.se/#organisation' },
+  isPartOf: { '@id': `${SAJT}/#principles` },
+  inLanguage: 'en',
+  image: `${SAJT}/bilder/dde10-open-graph-FB.png`,
+}];
+---
+<Bas titel={`${p.namn}: ethical design principle #${p.nr} — Digital Design Ethics`} beskrivning={sida.data.beskrivning} schema={schema}>
+  <article class="innehall princip-sida">
+    <p class="tillbaka"><a href={url('/#' + p.id)}>← All 10 principles</a></p>
+    <h1><span class="nummer">#{p.nr}</span> {p.namn}</h1>
+    <p><strong>As a user</strong>, {p.användare}</p>
+    <p><strong>As a designer</strong>, {p.designer}</p>
+    <Content />
+    <nav class="bladdra" aria-label="Other principles">
+      {före ? <a href={url('/principles/' + före.id)}>← #{före.nr} {före.namn}</a> : <span />}
+      {efter && <a href={url('/principles/' + efter.id)}>#{efter.nr} {efter.namn} →</a>}
+    </nav>
+  </article>
+</Bas>

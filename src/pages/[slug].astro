@@ -25,6 +25,17 @@ const schemaPerSida: Record<string, object[]> = {
       name: f.fråga,
       acceptedAnswer: { '@type': 'Answer', text: f.svar },
     })),
+  }, {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Digital Design Ethics',
+    description: 'A brief run through of One Day Interacts digital design ethics framework: a short summary of each of the 10 principles with examples, hands-on tips for applying them, and challenges met along the way.',
+    thumbnailUrl: 'https://i.ytimg.com/vi/4OvWvBm7z5o/maxresdefault.jpg',
+    uploadDate: '2022-12-26T23:11:47-08:00',
+    duration: 'PT18M18S',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/4OvWvBm7z5o',
+    contentUrl: 'https://www.youtube.com/watch?v=4OvWvBm7z5o',
+    author: { '@id': jonas['@id'] },
   }],
   'who-made-this': [{
     '@context': 'https://schema.org',

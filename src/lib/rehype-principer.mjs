@@ -15,6 +15,10 @@ export default function rehypePrinciper() {
         // Fast länk till varje princip, t.ex. /#freedom eller /#peace-of-mind
         const id = rest.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
         aktuell = { type: 'element', tagName: 'section', properties: { className: ['princip'], id }, children: [nod] };
+        // Länk till principens egen sida, läggs sist i blocket
+        aktuell.lasMer = { type: 'element', tagName: 'p', properties: { className: ['las-mer'] }, children: [
+          { type: 'element', tagName: 'a', properties: { href: `/principles/${id}` }, children: [{ type: 'text', value: `More about ${rest.trim()}` }] },
+        ] };
         ny.push(aktuell);
       } else if (aktuell && !bryter && !(nod.type === 'raw' && /<nav/.test(nod.value))) {
         aktuell.children.push(nod);
@@ -23,6 +27,7 @@ export default function rehypePrinciper() {
         ny.push(nod);
       }
     }
+    for (const n of ny) if (n.lasMer) { n.children.push(n.lasMer); delete n.lasMer; }
     // Samla alla principer i en gemensam behållare
     const första = ny.findIndex((n) => n.properties?.className?.includes('princip'));
     if (första >= 0) {

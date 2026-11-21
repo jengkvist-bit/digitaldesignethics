@@ -1,15 +1,15 @@
 ---
-sidtitel: "What is this? — Digital Design Ethics"
-beskrivning: "10 principles for compliance to universal ethics in digital products and services - for designers, developers, team leads, product owners and stakeholders."
+sidtitel: "What is digital design ethics? How to use the 10 principles"
+beskrivning: "Why digital design needs ethics, how to use the 10 principles in your team and projects, and how they build on the UN Declaration of Human Rights."
 ---
 
 # This is a tool for applying universal ethics to digital design
 
-This is the what’s, how’s and why’s for this tool. If you are in a hurry and just need the tools for a more humanistic digital reality - just incorporate [these 10 principles](/) in your next design project. They stem from UNs declaration of human rights, and should be valid for every society.
+This is the what’s, how’s and why’s for this tool. If you are in a hurry and just need the tools for a more humanistic digital reality - just incorporate [these 10 principles](/) in your next design project. They stem from the UN's declaration of human rights, and should be valid for every society.
 
 ## Why do we need this?
 
-Because design ethics and social sustainability is a concern of every designer. There are a lot of great design leaders calling for sustainability and ethics in digital design, and rightfully doing so. But unless the design collective can convert that responsibility we all have as designers into actionable items - there is a risk of getting stuck talking about it, and not moving on to doing it.
+Because design ethics and social sustainability are a concern of every designer. There are a lot of great design leaders calling for sustainability and ethics in digital design, and rightfully doing so. But unless the design collective can convert that responsibility we all have as designers into actionable items - there is a risk of getting stuck talking about it, and not moving on to doing it.
 
 Converting universal ethics into user stories is a way of bridging that gap, a way of making sure it is clearly communicated and incorporated in the actual digital artifacts that are being built.
 
@@ -31,7 +31,7 @@ The declaration of human rights can be accessed from here: [https://www.un.org/e
 
 ## How do I convince my team to use this tool?
 
-Let’s just hope it’s in every human's DNA to want to make this world a better place. It’s more fun and meaningful building things when you feel its for the greater good.
+Let’s just hope it’s in every human's DNA to want to make this world a better place. It’s more fun and meaningful building things when you feel it's for the greater good.
 
 Ethical design also adds economic value and magnetism to the product or service you are building, since it adds user satisfaction.
 
@@ -47,9 +47,11 @@ Yes. The intention is for it to be used as a means of actually doing design ethi
 
 ## How we use it
 
-A short lecture about our thought around these principles and how we are trying to implement them in our own design work.
+A short lecture about our thoughts around these principles and how we are trying to implement them in our own design work.
 
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/4OvWvBm7z5o" title="Digital Design Ethics" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
+**About the lecture (18 minutes, 2022).** Jonas Engkvist explains why ethics rarely gets attention in everyday design work, and why One Day Interact rewrote the UN Declaration of Human Rights as 10 user stories. He then goes through each principle with an example, from cyberbullying to a quiz app whose data ended up in an election campaign. The lecture ends with practical advice: define your own ethical standpoint, review products you already use, start small where it hurts the most, and set ethical requirements early in a project, before time and budget are fixed.
 
 <nav class="vidare" aria-label="Read more">
   <a href="/who-made-this">Who made this?</a>

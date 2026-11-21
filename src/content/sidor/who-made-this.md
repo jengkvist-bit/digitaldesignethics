@@ -1,6 +1,6 @@
 ---
-sidtitel: "Who made this? — Digital Design Ethics"
-beskrivning: "We are One Day Interact. We made this tool for ethical digital design because we are convinced that social sustainability is an important part of all design."
+sidtitel: "Who made Digital Design Ethics? Jonas Engkvist, One Day Interact"
+beskrivning: "Digital Design Ethics was created by service designer Jonas Engkvist at One Day Interact, to be freely used by the design community. No hidden business agenda."
 ---
 
 # We made this

@@ -12,7 +12,7 @@ export default defineConfig({
   trailingSlash: 'never',
   build: { format: 'file' },
   integrations: [sitemap({ filter: (sida) => !/\/(home|ethics-audit)\/?$/.test(sida) })],
-  markdown: { rehypePlugins: [rehypeBas, rehypePrinciper] },
+  markdown: { rehypePlugins: [rehypePrinciper, rehypeBas] },
   // Gamla adresser som ska leda vidare
   // /ethics-audit togs bort i nov 2026 (verktyget fungerade inte) och leder nu till startsidan.
   redirects: {
