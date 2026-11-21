@@ -11,8 +11,12 @@ export default defineConfig({
   // GitHub Pages visar what-is-this.html på adressen /what-is-this.
   trailingSlash: 'never',
   build: { format: 'file' },
-  integrations: [sitemap({ filter: (sida) => !sida.endsWith('/home/') && !sida.endsWith('/home') })],
+  integrations: [sitemap({ filter: (sida) => !/\/(home|ethics-audit)\/?$/.test(sida) })],
   markdown: { rehypePlugins: [rehypeBas, rehypePrinciper] },
   // Gamla adresser som ska leda vidare
-  redirects: { '/home': (process.env.BASE || '/').replace(/\/$/, '') + '/' },
+  // /ethics-audit togs bort i nov 2026 (verktyget fungerade inte) och leder nu till startsidan.
+  redirects: {
+    '/home': (process.env.BASE || '/').replace(/\/$/, '') + '/',
+    '/ethics-audit': (process.env.BASE || '/').replace(/\/$/, '') + '/',
+  },
 });

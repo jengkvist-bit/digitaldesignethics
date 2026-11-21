@@ -33,7 +33,6 @@ const meny = [
   { text: 'Home', href: '/' },
   { text: 'What is this?', href: '/what-is-this' },
   { text: 'Who made this?', href: '/who-made-this' },
-  { text: 'Ethics audit', href: '/ethics-audit' },
 ];
 // Webbanalys med GoatCounter: räknar besök utan cookies, så ingen cookie-banner behövs.
 // Byt namnet om du valde ett annat när du skapade kontot på goatcounter.com.
@@ -78,7 +77,7 @@ const räknaBesök = Astro.site?.hostname === 'www.digitaldesignethics.com';
     <slot />
   </main>
   <footer class="sidfot">
-    <p>© 2020 by <a href="https://onedayinteract.se/">One Day Interact</a></p>
+    <p>© 2020–{new Date().getFullYear()} by <a href="https://onedayinteract.se/">One Day Interact</a></p>
     <p>Use or share any way you like. We appreciate if you tell people were you got it from. / Cheers</p>
   </footer>
 </body>

@@ -1,5 +1,5 @@
 ---
-sidtitel: "Digial Design Ethics - 10 universal principles"
+sidtitel: "Digital Design Ethics - 10 universal principles"
 beskrivning: "Universal principles for ethical digital design. User stories ready to use freely in any design or redesign project."
 ---
 
@@ -9,14 +9,6 @@ Society has since long reached a point where digital life affects everyday human
 
 If every digital artifact designed or redesigned from now on would just get **10 user stories** approved and done, the Digital would become a habitat where all humans of all sorts can thrive.
 
----
-
-Is your service actually working for the people it's supposed to serve?
-Find out with AI:
-
-<p class="knapp-rad"><a class="knapp" href="/ethics-audit">TRY ETHICS AUDIT</a></p>
-
----
 
 ## #1 Freedom
 
