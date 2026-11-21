@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Bygg om sajten varje nyårsdag, så att copyright-året i sidfoten uppdateras.
+  schedule:
+    - cron: '0 6 1 1 *'
 
 permissions:
   contents: read
