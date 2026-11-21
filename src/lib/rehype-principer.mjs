@@ -20,7 +20,7 @@ export default function rehypePrinciper() {
           { type: 'element', tagName: 'a', properties: { href: `/principles/${id}` }, children: [{ type: 'text', value: `More about ${rest.trim()}` }] },
         ] };
         ny.push(aktuell);
-      } else if (aktuell && !bryter && !(nod.type === 'raw' && /<nav/.test(nod.value))) {
+      } else if (aktuell && !bryter && !(nod.type === 'raw' && /<(nav|aside)/.test(nod.value))) {
         aktuell.children.push(nod);
       } else {
         aktuell = null;
