@@ -14,5 +14,5 @@ export default defineConfig({
   integrations: [sitemap({ filter: (sida) => !sida.endsWith('/home/') && !sida.endsWith('/home') })],
   markdown: { rehypePlugins: [rehypeBas, rehypePrinciper] },
   // Gamla adresser som ska leda vidare
-  redirects: { '/home': '/' },
+  redirects: { '/home': (process.env.BASE || '/').replace(/\/$/, '') + '/' },
 });
