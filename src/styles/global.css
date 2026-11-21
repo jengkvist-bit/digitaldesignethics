@@ -76,3 +76,13 @@ hr { border: 0; border-top: 1px solid var(--linje); margin: 2.5rem 0; }
 .sidfot { max-width: var(--bredd); margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.8em; border-top: 1px solid var(--linje); }
 .sidfot p { margin: 0.2rem 0; }
 .sidfot a { color: inherit; }
+
+/* Startsidan: avsändare och länk till varje princips egen sida */
+.avsandare { font-size: 0.8em; }
+.las-mer { font-size: 0.85em; margin-top: -0.2rem; }
+
+/* Sida per princip */
+.tillbaka { font-size: 0.85em; margin: 0 0 1.5rem; }
+.bladdra { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--linje); font-weight: 600; }
+.bladdra a { color: var(--rubrik); text-decoration: none; }
+.bladdra a:hover { text-decoration: underline; }
