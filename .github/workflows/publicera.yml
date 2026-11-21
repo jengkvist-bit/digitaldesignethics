@@ -30,12 +30,9 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          # TESTFAS: sajten ligger på jengkvist-bit.github.io/digitaldesignethics.
-          # När DNS hos Loopia pekar hit: byt till
-          #   SITE: https://www.digitaldesignethics.com
-          #   BASE: /
-          SITE: https://jengkvist-bit.github.io
-          BASE: /digitaldesignethics
+          # Sajtens riktiga adress
+          SITE: https://www.digitaldesignethics.com
+          BASE: /
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

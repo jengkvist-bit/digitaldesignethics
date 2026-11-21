@@ -34,11 +34,6 @@ const meny = [
   { text: 'What is this?', href: '/what-is-this' },
   { text: 'Who made this?', href: '/who-made-this' },
 ];
-// Webbanalys med GoatCounter: räknar besök utan cookies, så ingen cookie-banner behövs.
-// Byt namnet om du valde ett annat när du skapade kontot på goatcounter.com.
-const goatcounter = 'digitaldesignethics';
-// Räkna bara besök på den riktiga sajten, inte på testadressen.
-const räknaBesök = Astro.site?.hostname === 'www.digitaldesignethics.com';
 ---
 <!doctype html>
 <html lang="en">
@@ -56,9 +51,6 @@ const räknaBesök = Astro.site?.hostname === 'www.digitaldesignethics.com';
   <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
   <link rel="canonical" href={new URL(sökväg, Astro.site)} />
   {[webbplats, organisation, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
-  {räknaBesök && (
-    <script is:inline async data-goatcounter={`https://${goatcounter}.goatcounter.com/count`} src="https://gc.zgo.at/count.js"></script>
-  )}
 </head>
 <body>
   <a class="hoppa" href="#innehall">Skip to content</a>
