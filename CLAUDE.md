@@ -11,4 +11,6 @@
 - Sidan /ethics-audit togs bort i nov 2026 eftersom verktyget på Vercel inte fungerade. Den kan läggas tillbaka om verktyget lagas.
 - Alla robotar, även AI-träning, får läsa sajten (Jonas beslut nov 2026).
 - Rör aldrig DNS hos Loopia eller något hos Squarespace. Det gör Jonas själv.
-- Kör `npm run build` innan du pushar och kontrollera att alla sidor byggs.
+- Strukturerad data (schema.org) och `/llms.txt` räknas fram från Markdown-filerna (`src/lib/schema.ts`). Principerna måste ha rubriker på formen `## #1 Freedom` och stycken som börjar med `**As a user**` / `**As a designer**`.
+- Varje princip har en fast länk, t.ex. `/#freedom`. Ändra inte principernas namn utan att Jonas vet att länkarna ändras.
+- Kör `npm run build` innan du pushar och kontrollera att alla sidor byggs. Om ändringar i Markdown inte syns lokalt: töm cachen med `rm -rf .astro node_modules/.astro`.

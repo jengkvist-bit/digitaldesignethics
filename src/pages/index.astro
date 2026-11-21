@@ -2,10 +2,38 @@
 // Startsidan. Texten hämtas från src/content/sidor/start.md
 import Bas from '../layouts/Bas.astro';
 import { getEntry, render } from 'astro:content';
+import { SAJT, jonas, principer } from '../lib/schema';
 const sida = (await getEntry('sidor', 'start'))!;
 const { Content } = await render(sida);
+
+// De tio principerna som en namngiven lista, med Jonas som författare.
+const lista = principer(sida.body ?? '');
+const schema = [{
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  '@id': `${SAJT}/#principles`,
+  name: '10 universal principles for ethics in digital design',
+  description: sida.data.beskrivning,
+  url: `${SAJT}/`,
+  author: { '@id': jonas['@id'] },
+  publisher: { '@id': 'https://www.onedayinteract.se/#organisation' },
+  datePublished: '2020',
+  inLanguage: 'en',
+  isBasedOn: 'https://www.un.org/en/universal-declaration-human-rights/',
+  numberOfItems: lista.length,
+  itemListElement: lista.map((p) => ({
+    '@type': 'ListItem',
+    position: p.nr,
+    url: `${SAJT}/#${p.id}`,
+    item: {
+      '@type': 'CreativeWork',
+      name: `#${p.nr} ${p.namn}`,
+      text: `As a user, ${p.användare} As a designer, ${p.designer}`,
+    },
+  })),
+}];
 ---
-<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild}>
+<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild} schema={schema}>
   <article class="innehall start">
     <Content />
   </article>

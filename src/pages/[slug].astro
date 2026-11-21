@@ -2,6 +2,7 @@
 // Mall för de övriga sidorna. Texten hämtas från src/content/sidor/<adress>.md
 import Bas from '../layouts/Bas.astro';
 import { getCollection, render } from 'astro:content';
+import { SAJT, jonas, fragor } from '../lib/schema';
 
 export async function getStaticPaths() {
   const sidor = (await getCollection('sidor')).filter((s) => s.id !== 'start');
@@ -9,8 +10,31 @@ export async function getStaticPaths() {
 }
 const { sida } = Astro.props;
 const { Content } = await render(sida);
+
+// Strukturerad data per sida: frågor och svar på What is this, Om-sida på Who made this.
+const adress = `${SAJT}/${sida.id}`;
+const schemaPerSida: Record<string, object[]> = {
+  'what-is-this': [{
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    url: adress,
+    about: { '@id': `${SAJT}/#principles` },
+    author: { '@id': jonas['@id'] },
+    mainEntity: fragor(sida.body ?? '').map((f) => ({
+      '@type': 'Question',
+      name: f.fråga,
+      acceptedAnswer: { '@type': 'Answer', text: f.svar },
+    })),
+  }],
+  'who-made-this': [{
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    url: adress,
+    mainEntity: { '@id': jonas['@id'] },
+  }],
+};
 ---
-<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild}>
+<Bas titel={sida.data.sidtitel} beskrivning={sida.data.beskrivning} bild={sida.data.delningsbild} schema={schemaPerSida[sida.id]}>
   <article class={`innehall ${sida.id}`}>
     <Content />
   </article>

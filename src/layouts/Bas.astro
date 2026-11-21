@@ -3,10 +3,11 @@
 import '@fontsource/inter-tight/400.css';
 import '@fontsource/inter-tight/600.css';
 import '../styles/global.css';
+import { SAJT, jonas } from '../lib/schema';
 
 interface Props { titel: string; beskrivning?: string; bild?: string; schema?: object[] }
 const { titel, beskrivning = '', bild = '/bilder/dde10-open-graph-FB.png', schema = [] } = Astro.props;
-const sajt = 'https://www.digitaldesignethics.com';
+const sajt = SAJT;
 // Strukturerad data (schema.org) som hjälper Google och AI-tjänster att förstå sajten.
 const webbplats = {
   '@context': 'https://schema.org',
@@ -24,8 +25,9 @@ const organisation = {
   url: 'https://www.onedayinteract.se',
   email: 'jonas@onedayinteract.se',
   logo: sajt + '/bilder/odi-avatar-wordmark-black.png',
-  founder: { '@type': 'Person', name: 'Jonas Engkvist', sameAs: ['https://se.linkedin.com/in/jonas-engkvist', 'https://medium.com/@jonasengkvist'] },
+  founder: { '@id': jonas['@id'] },
 };
+const person = { '@context': 'https://schema.org', ...jonas };
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 // Sidans adress utan .html och utan snedstreck på slutet, t.ex. /what-is-this
 const sökväg = Astro.url.pathname.replace(base, '').replace(/\.html$/, '').replace(/\/$/, '').replace(/^\/index$/, '') || '/';
@@ -42,6 +44,7 @@ const meny = [
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{titel}</title>
   {beskrivning && <meta name="description" content={beskrivning} />}
+  <meta name="author" content="Jonas Engkvist, One Day Interact" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Digital Design Ethics" />
   <meta property="og:title" content={titel} />
@@ -50,7 +53,7 @@ const meny = [
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
   <link rel="canonical" href={new URL(sökväg, Astro.site)} />
-  {[webbplats, organisation, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  {[webbplats, organisation, person, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
 </head>
 <body>
   <a class="hoppa" href="#innehall">Skip to content</a>

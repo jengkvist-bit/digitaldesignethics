@@ -12,7 +12,9 @@ export default function rehypePrinciper() {
         // Lägg numret ("#1") i en egen <span class="nummer"> så att det kan formas separat
         const [, nr, rest] = nod.children[0].value.trim().match(/^(#\d+)\s*(.*)$/);
         nod.children = [{ type: 'element', tagName: 'span', properties: { className: ['nummer'] }, children: [{ type: 'text', value: nr }] }, { type: 'text', value: ' ' + rest }];
-        aktuell = { type: 'element', tagName: 'section', properties: { className: ['princip'] }, children: [nod] };
+        // Fast länk till varje princip, t.ex. /#freedom eller /#peace-of-mind
+        const id = rest.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-');
+        aktuell = { type: 'element', tagName: 'section', properties: { className: ['princip'], id }, children: [nod] };
         ny.push(aktuell);
       } else if (aktuell && !bryter && !(nod.type === 'raw' && /<nav/.test(nod.value))) {
         aktuell.children.push(nod);
