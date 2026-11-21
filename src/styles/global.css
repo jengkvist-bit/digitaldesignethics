@@ -89,17 +89,9 @@ hr { border: 0; border-top: 1px solid var(--linje); margin: 2.5rem 0; }
 .bladdra a { color: var(--länk); text-decoration: none; }
 .bladdra a:hover { text-decoration: underline; }
 
-/* Postern att ladda ner (startsidan) */
-.poster { margin-top: 4rem; display: grid; gap: 1.5rem 2.5rem; align-items: center; }
-.poster h2 { margin-top: 0; }
-.poster .knapp { margin-top: 0.4rem; }
+/* Postern att ladda ner (startsidan): korallröd banderoll, vald av Jonas nov 2026.
+   Vit text på --knapp ger 5.4:1 i kontrast (WCAG AA). */
+.poster { margin-top: 4rem; background: var(--knapp); color: #fff; padding: clamp(1.5rem, 5vw, 3rem); border-radius: 0.5rem; }
+.poster h2 { margin-top: 0; color: #fff; }
+.poster .knapp { margin-top: 0.4rem; background: #fff; color: var(--knapp); }
 .poster-not { font-size: 0.85em; margin-top: -0.3rem; }
-/* Förslag A: bild på postern bredvid texten */
-.poster-a { background: var(--yta); padding: clamp(1.25rem, 4vw, 2.5rem); border-radius: 0.5rem; }
-.poster-a img { max-width: 14rem; box-shadow: 0 0.4rem 1.4rem rgb(0 0 0 / 0.12); transform: rotate(-2deg); justify-self: center; }
-@media (min-width: 40rem) { .poster-a { grid-template-columns: 14rem 1fr; } }
-/* Förslag B: korall banderoll utan bild */
-.poster-b { background: var(--knapp); color: #fff; padding: clamp(1.5rem, 5vw, 3rem); border-radius: 0.5rem; }
-.poster-b img { display: none; }
-.poster-b h2 { color: #fff; }
-.poster-b .knapp { background: #fff; color: var(--knapp); }

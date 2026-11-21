@@ -74,8 +74,7 @@ If every digital artifact designed or redesigned from now on would just get **10
 
 **As a designer**, I need to realize that whatever digital tool or service I am creating, however crucial it may be, it is just a small part of any user's physical and digital life. I should design tools and services that are there whenever their user needs them, and that stay out of their way whenever they don’t need them.
 
-<aside class="poster poster-a" aria-labelledby="poster-rubrik">
-  <img src="/poster/digital-design-ethics-poster.png" alt="The poster: all 10 principles on one A3 page" width="560" height="791" loading="lazy">
+<aside class="poster" aria-labelledby="poster-rubrik">
   <div>
     <h2 id="poster-rubrik">Print it. Pin it up.</h2>
     <p>Get all 10 principles on one A3 poster. Put it up in the office, the studio or wherever digital things get designed, as a daily reminder of what users need.</p>
