@@ -40,11 +40,9 @@ const meny = [
 const goatcounter = 'digitaldesignethics';
 // Räkna bara besök på den riktiga sajten, inte på testadressen.
 const räknaBesök = Astro.site?.hostname === 'www.digitaldesignethics.com';
-// Designtema (tillfälligt, för att jämföra förslag). Tas bort när Jonas har valt.
-const tema = process.env.TEMA || 'a';
 ---
 <!doctype html>
-<html lang="en" data-tema={tema}>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />

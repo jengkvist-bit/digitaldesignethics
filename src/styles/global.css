@@ -1,6 +1,5 @@
-/* Design för digitaldesignethics.com.
-   Färger och typsnitt styrs av variablerna nedan. Tre förslag (a, b, c) finns
-   tills Jonas har valt ett; sedan tas de andra bort. */
+/* Design för digitaldesignethics.com (förslag A "Som i dag", valt av Jonas nov 2026).
+   Färger och typsnitt styrs av variablerna nedan. */
 
 :root {
   --bakgrund: #fff6f5;
@@ -13,16 +12,6 @@
   --linje: #f3d6d3;
   --typsnitt: 'Inter Tight', system-ui, sans-serif;
   --bredd: 46rem;
-}
-[data-tema='c'] {
-  --bakgrund: #ffffff;
-  --yta: #ffffff;
-  --text: #2b2b2b;
-  --rubrik: #1d1d1f;
-  --accent: #d23048;
-  --länk: #b8233a;
-  --linje: #e6e6e6;
-  --bredd: 40rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -94,21 +83,3 @@ details p { margin: 0.7rem 0 0.2rem; }
 .sidfot { max-width: var(--bredd); margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.8em; border-top: 1px solid var(--linje); }
 .sidfot p { margin: 0.2rem 0; }
 .sidfot a { color: inherit; }
-
-/* ---------- Förslag B: principerna som kort ---------- */
-[data-tema='b'] .start { max-width: 72rem; }
-[data-tema='b'] .start > :not(.principer) { max-width: 46rem; }
-[data-tema='b'] .principer { display: grid; gap: 1.2rem; margin-top: 2.5rem; }
-@media (min-width: 52rem) { [data-tema='b'] .principer { grid-template-columns: 1fr 1fr; } }
-[data-tema='b'] .princip { background: var(--yta); border-radius: 0.6rem; padding: 1.6rem 1.8rem; box-shadow: 0 1px 3px rgb(0 0 0 / 6%); }
-[data-tema='b'] .princip h2 { margin-top: 0; }
-[data-tema='b'] .princip p { font-size: 0.92em; }
-
-/* ---------- Förslag C: lugn läsning ---------- */
-[data-tema='c'] .sidhuvud { border-bottom: 1px solid var(--linje); }
-[data-tema='c'] .logga { color: var(--text); }
-[data-tema='c'] h1 { color: var(--rubrik); }
-[data-tema='c'] .princip { border-top: 1px solid var(--linje); padding-top: 1.8rem; margin-top: 2.2rem; }
-[data-tema='c'] .princip h2 { margin: 0 0 0.8rem; }
-[data-tema='c'] .nummer { display: block; color: var(--accent); font-size: 0.8em; letter-spacing: 0.02em; margin-bottom: 0.2rem; }
-[data-tema='c'] .vidare a, [data-tema='c'] summary { color: var(--rubrik); }
