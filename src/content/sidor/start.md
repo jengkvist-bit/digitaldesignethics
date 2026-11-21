@@ -74,6 +74,11 @@ If every digital artifact designed or redesigned from now on would just get **10
 
 **As a designer**, I need to realize that whatever digital tool or service I am creating, however crucial it may be, it is just a small part of any user's physical and digital life. I should design tools and services that are there whenever their user needs them, and that stay out of their way whenever they don’t need them.
 
+<nav class="vidare" aria-label="Read more">
+  <a href="/what-is-this">What is this?</a>
+  <a href="/who-made-this">Who made this?</a>
+</nav>
+
 <aside class="poster" aria-labelledby="poster-rubrik">
   <div>
     <h2 id="poster-rubrik">Print it. Pin it up.</h2>
@@ -82,8 +87,3 @@ If every digital artifact designed or redesigned from now on would just get **10
     <p class="poster-not">Free to print and share. Fits A4 too.</p>
   </div>
 </aside>
-
-<nav class="vidare" aria-label="Read more">
-  <a href="/what-is-this">What is this?</a>
-  <a href="/who-made-this">Who made this?</a>
-</nav>

@@ -15,5 +15,5 @@
 - Varje princip har en egen sida, `/principles/<namn>` (text i `src/content/principer/`), och en fast länk på startsidan, t.ex. `/#freedom`. "In practice" bygger på Jonas föreläsning från 2022 (YouTube-videon).
 - Varje princip har en fast länk, t.ex. `/#freedom`. Ändra inte principernas namn utan att Jonas vet att länkarna ändras.
 - Kör `npm run build` innan du pushar och kontrollera att alla sidor byggs. Om ändringar i Markdown inte syns lokalt: töm cachen med `rm -rf .astro node_modules/.astro`.
-- Postern (A3-PDF) ligger i `public/poster/` och länkas från en korallröd banderoll sist på startsidan (Jonas val nov 2026). Källan finns i projektfilerna under `flytt/poster/`.
+- Postern (A3-PDF) ligger i `public/poster/` och länkas från en korallröd banderoll sist på startsidan, under länkarna "What is this?" och "Who made this?" (Jonas val nov 2026). Källan finns i projektfilerna under `flytt/poster/`.
 - Felsidan (404) visar alla tio principer som länkar (Jonas val nov 2026) och är dold för sökmotorer.
