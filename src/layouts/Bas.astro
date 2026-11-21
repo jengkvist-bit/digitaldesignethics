@@ -47,9 +47,12 @@ const meny = [
   <meta name="author" content="Jonas Engkvist, One Day Interact" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Digital Design Ethics" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content={new URL(sökväg, Astro.site)} />
   <meta property="og:title" content={titel} />
   {beskrivning && <meta property="og:description" content={beskrivning} />}
   <meta property="og:image" content={new URL(base + bild, Astro.site)} />
+  <meta property="og:image:alt" content="Digital Design Ethics: 10 universal principles for ethics in digital design" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
   <link rel="canonical" href={new URL(sökväg, Astro.site)} />
