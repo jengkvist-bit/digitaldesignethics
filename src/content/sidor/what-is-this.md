@@ -49,7 +49,7 @@ Yes. The intention is for it to be used as a means of actually doing design ethi
 
 A short lecture about our thoughts around these principles and how we are trying to implement them in our own design work.
 
-<div class="video" data-youtube="4OvWvBm7z5o"><button type="button" class="video-start"><span class="video-play" aria-hidden="true"></span><span class="video-titel">Watch the lecture <span class="video-tid">18 min</span></span><span class="video-info">The video plays from YouTube. Nothing is loaded from YouTube until you press play.</span></button></div>
+<div class="video" data-youtube="4OvWvBm7z5o"><button type="button" class="video-start"><span class="video-play" aria-hidden="true"></span><span class="video-titel">Watch the lecture <span class="video-tid">18 min</span></span><span class="video-info">Your choice: until you press play, YouTube doesn't know you're here.</span></button></div>
 
 **About the lecture (18 minutes, 2022).** Jonas Engkvist explains why ethics rarely gets attention in everyday design work, and why One Day Interact rewrote the UN Declaration of Human Rights as 10 user stories. He then goes through each principle with an example, from cyberbullying to a quiz app whose data ended up in an election campaign. The lecture ends with practical advice: define your own ethical standpoint, review products you already use, start small where it hurts the most, and set ethical requirements early in a project, before time and budget are fixed.
 
