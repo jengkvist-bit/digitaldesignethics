@@ -67,6 +67,15 @@ const meny = [
       if (a && window.goatcounter && window.goatcounter.count) {
         window.goatcounter.count({ path: 'download-poster', title: 'Poster downloaded', event: true });
       }
+      var v = e.target.closest && e.target.closest('.video-start');
+      if (v) {
+        var box = v.parentNode, f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.youtube + '?autoplay=1';
+        f.title = 'Digital Design Ethics';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        box.replaceChildren(f);
+      }
     });
   </script>
 </head>
