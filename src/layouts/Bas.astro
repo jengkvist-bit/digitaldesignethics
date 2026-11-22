@@ -58,6 +58,17 @@ const meny = [
   <link rel="icon" href={base + '/bilder/favicon.png'} type="image/png" />
   {ingenIndex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={new URL(sökväg, Astro.site)} />}
   {[webbplats, organisation, person, ...schema].map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
+  {/* Besöksstatistik med GoatCounter: inga cookies, ingen spårning mellan sajter, ingen cookie-banner behövs.
+      Räknar bara på den riktiga adressen, inte vid test lokalt. Nedladdningar av postern räknas som en egen händelse. */}
+  <script data-goatcounter="https://digitaldesignethics.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script is:inline>
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href$=".pdf"]');
+      if (a && window.goatcounter && window.goatcounter.count) {
+        window.goatcounter.count({ path: 'download-poster', title: 'Poster downloaded', event: true });
+      }
+    });
+  </script>
 </head>
 <body>
   <a class="hoppa" href="#innehall">Skip to content</a>
