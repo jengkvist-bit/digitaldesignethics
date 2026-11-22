@@ -6,7 +6,7 @@
 - Innehåll ligger i `src/content/sidor/` (Markdown, en fil per sida; `start.md` är startsidan). Design ligger i `src/styles/global.css`.
 - Behåll de gamla Squarespace-adresserna exakt: `/`, `/what-is-this`, `/who-made-this` (utan snedstreck på slutet). `/home` och `/ethics-audit` leder vidare till `/`.
 - Huvudadressen är `https://www.digitaldesignethics.com` (med www).
-- Ingen statistik just nu (Jonas beslut nov 2026). Om det läggs till: GoatCounter (cookiefri), som på tractory.se. Inga cookies, ingen cookiebanner.
+- Statistik: GoatCounter (cookiefri), sajtkod `digitaldesignethics` i samma konto som tractory (statistiken på digitaldesignethics.goatcounter.com). Inga cookies, ingen cookiebanner. Nedladdningar av postern räknas som händelsen `download-poster`. Jonas vill ha en månadsrapport med färdiga slutsatser i stället för att själv logga in.
 - YouTube-videon bäddas in via youtube-nocookie.com.
 - Sidan /ethics-audit togs bort i nov 2026 eftersom verktyget på Vercel inte fungerade. Den kan läggas tillbaka om verktyget lagas.
 - Alla robotar, även AI-träning, får läsa sajten (Jonas beslut nov 2026).
