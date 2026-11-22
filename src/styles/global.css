@@ -98,6 +98,8 @@ hr { border: 0; border-top: 1px solid var(--linje); margin: 2.5rem 0; }
 .sidfot { max-width: var(--bredd); margin: 0 auto; padding: 2rem 1rem 3rem; font-size: 0.8em; border-top: 1px solid var(--linje); }
 .sidfot p { margin: 0.2rem 0; }
 .sidfot a { color: inherit; }
+/* Integritetsraden i sidfoten (Jonas val C, nov 2026). Mörk korall för att klara kontrastkravet. */
+.sidfot .integritet { margin-bottom: 0.8rem; color: var(--knapp); font-weight: 500; }
 
 /* Startsidan: avsändare och länk till varje princips egen sida */
 .avsandare { font-size: 0.8em; }
